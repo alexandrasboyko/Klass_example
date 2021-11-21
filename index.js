@@ -1,0 +1,13 @@
+const {Customer} = require('./customer')
+const {Agregation} = require('./agregation')
+const {customers} = require('./customerDataBase')
+
+const customer = new Customer('Mark', 23)
+console.log(customer.get())
+console.log(customer.isSame({age: 20}))
+console.log(customer.isSame({age: 23}))
+console.log(customer.isSame({name: 'Mark'}))
+console.log(customer.isSame({name: 'Mark', age: 22}))
+console.log(customer.isSame({name: 'Mark', age: 23}))
+const agregation = new Agregation(customers, Customer).getCollectionEnteties()
+console.log(agregation)
